@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>5&quot; Freestyle — Chase-Tuned Build | jans.lv</title>
+
+  <link rel="stylesheet" href="../../assets/css/base.css" />
+  <link rel="stylesheet" href="../../assets/css/projects.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../">jans.lv</a>
+      <nav class="nav">
+        <a href="../../projects/">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>5&quot; Freestyle — Chase-Tuned Build</h1>
+      <p class="muted meta">
+        Lean chase rig for tight lines and clean footage — built for predictable handling, stable RF and crash-resilient mechanics.
+      </p>
+    </section>
+
+    <section class="section section-tight">
+      <h2>Overview</h2>
+
+      <div class="split">
+        <div class="split-main">
+          <div class="lead">
+            <figure class="cover-mini">
+              <img src="../../assets/img/projects/5inch-freestyle/cover.webp" alt="5-inch freestyle quad cover" loading="eager" />
+            </figure>
+
+            <div class="lead-text">
+              <h2>Chase platform</h2>
+              <p>
+                This 5-inch quad was built as a dedicated chase platform for close-proximity flying and race-event filming.
+                Priorities: smooth control, vibration discipline and mechanical durability — not maximum top speed.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            The build relies heavily on custom 3D-printed parts to replace temporary solutions like zip-ties and tape,
+            improving repeatability, serviceability and crash resilience.
+          </p>
+          <p class="muted">
+            Validated in real-world chase scenarios where stable video and predictable throttle response mattered most.
+          </p>
+        </div>
+
+        <aside class="spec-card">
+          <h2>Quick spec</h2>
+          <dl class="spec">
+            <dt>Frame</dt><dd>GEPRC Mark5 (true-X)</dd>
+            <dt>FC / ESC</dt><dd>SpeedyBee F7 + 60A stack (soft-mounted)</dd>
+            <dt>Motors</dt><dd>2306 1700KV</dd>
+            <dt>Props</dt><dd>5×4.3</dd>
+            <dt>Battery</dt><dd>6S 1100–1300 mAh</dd>
+            <dt>FPV camera</dt><dd>RunCam Phoenix 2 Pro (placeholder)</dd>
+            <dt>VTX</dt><dd>SpeedyBee TX800 (analogue)</dd>
+            <dt>VTX antenna</dt><dd>Foxeer Lollipop 4 RHCP</dd>
+            <dt>RX link</dt><dd>TBS Crossfire Nano RX</dd>
+            <dt>RX antenna</dt><dd>TBS Immortal T</dd>
+            <dt>GPS</dt><dd>GPS + compass module (u-blox M8 class, exact model unknown)</dd>
+            <dt>Beeper</dt><dd>Self-powered beeper (model unknown)</dd>
+            <dt>Payload</dt><dd>GoPro 12 + ND filters</dd>
+            <dt>Rates</dt><dd>Roll 430° · Pitch 390° · Yaw 320°</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="duo">
+        <div class="panel">
+          <h2>Design decisions</h2>
+          <ul class="list-tight">
+            <li><strong>Mark5 true-X geometry:</strong> neutral response for chase lines.</li>
+            <li><strong>Soft-mounted stack:</strong> lower gyro noise, consistent tuning.</li>
+            <li><strong>Analogue RF chain:</strong> stable feed in dust and foliage.</li>
+            <li><strong>Printed protection:</strong> rigid mounts instead of tape/zip-ties.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>Electronics &amp; RF</h2>
+          <ul class="list-tight">
+            <li><strong>Stack:</strong> SpeedyBee F7 + 60A, soft-mounted.</li>
+            <li><strong>Camera:</strong> RunCam Phoenix 2 Pro (original not confirmed).</li>
+            <li><strong>VTX:</strong> TX800 + Foxeer Lollipop 4 RHCP.</li>
+            <li><strong>Control link:</strong> Crossfire Nano RX + Immortal T.</li>
+            <li><strong>GPS:</strong> GPS + compass module (M8 class).</li>
+            <li><strong>Recovery:</strong> independent self-powered beeper.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2>3D-printed parts</h2>
+        <ul class="list-tight">
+          <li>Arm-end motor protection.</li>
+          <li>Belly / skid plate.</li>
+          <li>Rear stack protective cage.</li>
+          <li>Rigid VTX mount.</li>
+          <li>Antenna mounts (SMA + Immortal T).</li>
+          <li>Combined GoPro + GPS mount.</li>
+          <li>Self-powered beeper mount.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Gallery</h2>
+
+      <!-- IMPORTANT: no hardcoded images here (prevents duplicates) -->
+      <div class="gallery" id="gallery"
+        data-base="../../assets/img/projects/5inch-freestyle/"
+        aria-label="Project gallery">
+      </div>
+
+      <p class="muted" style="margin-top:10px;">
+        Tip: click any image to open the full file.
+      </p>
+    </section>
+
+    <footer class="site-footer">
+      <div class="wrap muted">© 2025 jans.lv</div>
+    </footer>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" hidden aria-hidden="true">
+    <button class="lb-close" type="button" aria-label="Close">&times;</button>
+    <img class="lb-img" alt="Full-size preview" />
+  </div>
+
+  <!-- Gallery config (single source of truth) -->
+  <script>
+    window.PROJECT_GALLERY = [
+      "1.webp",
+      "2.webp",
+      "3.webp",
+      "4.webp",
+      "5.webp",
+      "6.webp"
+    ];
+  </script>
+
+  <script src="../../assets/js/project-gallery.js" defer></script>
+</body>
+</html>

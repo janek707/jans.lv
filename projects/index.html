@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Projects — jans.lv</title>
+  <meta name="description" content="All projects — engineering builds, systems, documentation." />
+
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/cards.css" />
+  <link rel="stylesheet" href="/assets/css/projects.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">jans.lv</a>
+      <nav class="nav">
+        <a href="/projects/">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Projects</h1>
+      <p class="muted">Catalog of builds, systems and documentation.</p>
+    </section>
+
+    <section class="section">
+      <div class="filters" role="region" aria-label="Project filters">
+        <div class="filter">
+          <label class="muted" for="q">Search</label>
+          <input id="q" type="search" placeholder="Title, excerpt, tag…" autocomplete="off" />
+        </div>
+
+        <div class="filter">
+          <label class="muted" for="category">Category</label>
+          <select id="category"></select>
+        </div>
+
+        <div class="filter">
+          <label class="muted" for="status">Status</label>
+          <select id="status"></select>
+        </div>
+
+        <button id="clear" class="btn" type="button">Clear</button>
+
+        <div class="results muted" id="results"></div>
+      </div>
+
+      <div id="projectsGrid" class="grid" aria-live="polite"></div>
+
+      <noscript>
+        <p class="muted">Enable JavaScript to view the project catalog.</p>
+      </noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="muted">© <span id="year"></span> jans.lv</span>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script type="module" src="/assets/js/projects-index.js"></script>
+</body>
+</html>

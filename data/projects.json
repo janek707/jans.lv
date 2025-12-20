@@ -1,0 +1,47 @@
+[
+    {
+      "slug": "klasravas-kauss-2025",
+      "title": "Kraslavas Kauss 2025",
+      "excerpt": "Race event prep, tuning and field notes.",
+      "date": "2025-12-18",
+      "status": "ACTIVE",
+      "category": "FPV",
+      "tags": ["FPV", "Racing", "Tuning"],
+      "cover": "/assets/img/projects/klasravas-kauss-2025-cover.jpg",
+      "featured": true
+    },
+    {
+      "slug": "7inch-los",
+      "title": "7-inch Long Range (LOS)",
+      "excerpt": "Long-range build: reliability, RF setup and flight testing.",
+      "date": "2025-12-15",
+      "status": "STABLE",
+      "category": "FPV",
+      "tags": ["FPV", "Long-range", "RF"],
+      "cover": "/assets/img/projects/7inch-los-cover.jpg",
+      "featured": true
+    },
+    {
+      "slug": "5inch-freestyle",
+      "title": "5-inch Freestyle Quad",
+      "excerpt": "Freestyle build configuration and iteration log.",
+      "date": "2025-12-10",
+      "status": "STABLE",
+      "category": "FPV",
+      "tags": ["FPV", "Freestyle", "Build"],
+      "cover": "/assets/img/projects/sinch-freestyle-cover.jpg",
+      "featured": true
+    },
+    {
+      "slug": "fpv-wing",
+      "title": "FPV Wing Platform",
+      "excerpt": "Wing platform setup, power system and video link experiments.",
+      "date": "2025-11-30",
+      "status": "ACTIVE",
+      "category": "FPV",
+      "tags": ["FPV", "Wing", "RF"],
+      "cover": "/assets/img/projects/fpv-wing-cover.jpg",
+      "featured": false
+    }
+  ]
+  

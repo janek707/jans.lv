@@ -1,0 +1,171 @@
+/* projects.css — project pages layout + gallery + lightbox */
+
+:root{
+  --gap:18px;
+  --gap2:14px;
+}
+
+/* Safety: respect [hidden] even if element has display rules */
+[hidden]{display:none !important;}
+
+/* Sections */
+.section{padding:16px 0 34px;}
+.section-tight{padding:10px 0 18px;}
+
+/* Generic panel (project pages) */
+.panel{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,0.03);
+  padding:14px;
+}
+
+/* Split layout: text + spec */
+.split{
+  display:grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap:var(--gap);
+  align-items:start;
+  padding-top:12px;
+}
+
+.spec-card{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,0.03);
+  padding:14px;
+}
+
+/* Spec list */
+.spec{
+  margin:10px 0 0;
+  display:grid;
+  grid-template-columns: 130px 1fr;
+  gap:8px 12px;
+}
+.spec dt{
+  color:var(--muted);
+  font-weight:600;
+}
+.spec dd{margin:0;}
+
+/* Lead block (small cover inside left column) */
+.lead{
+  display:grid;
+  grid-template-columns: 240px 1fr;
+  gap:14px;
+  align-items:start;
+  margin: 8px 0 12px;
+}
+
+.cover-mini{margin:0;}
+.cover-mini img{
+  width:100%;
+  display:block;
+  aspect-ratio: 4 / 3;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,0.25);
+}
+
+.lead-text h2{margin:0 0 8px;}
+.lead-text p{margin:0; line-height:1.55;}
+
+/* Duo panels */
+.duo{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:var(--gap);
+}
+
+/* Gallery grid */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:var(--gap2);
+}
+
+.gitem{
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  border-radius:12px;
+}
+
+.gitem img{
+  width:100%;
+  height:100%;
+  aspect-ratio: 4 / 3;
+  object-fit:cover;
+  display:block;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,0.25);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+
+.gitem:hover img{
+  transform:scale(1.01);
+  box-shadow:0 10px 26px rgba(0,0,0,0.35);
+}
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(0,0,0,0.82);
+  backdrop-filter: blur(2px);
+}
+
+.lb-img{
+  max-width:min(1200px, 92vw);
+  max-height: 86vh;
+  width:auto;
+  height:auto;
+  display:block;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.25);
+}
+
+.lb-close{
+  position:fixed;
+  top:14px;
+  right:14px;
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.08);
+  color:rgba(255,255,255,0.92);
+  font-size:22px;
+  line-height:1;
+  cursor:pointer;
+}
+.lb-close:hover{
+  background:rgba(255,255,255,0.14);
+}
+
+/* Mobile */
+@media (max-width:960px){
+  .split{grid-template-columns:1fr;}
+  .duo{grid-template-columns:1fr;}
+  .gallery{grid-template-columns:repeat(2,1fr);}
+}
+
+@media (max-width:640px){
+  .lead{grid-template-columns:1fr;}
+  .cover-mini img{aspect-ratio: 16 / 9;}
+  .gallery{grid-template-columns:1fr;}
+  .spec{grid-template-columns:110px 1fr;}
+  .lightbox{padding:14px;}
+  .lb-img{max-height: 82vh;}
+}
