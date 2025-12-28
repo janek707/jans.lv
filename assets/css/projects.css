@@ -107,6 +107,80 @@
   background:rgba(255,255,255,0.03);
 }
 
+/* Lab case study layout */
+.lab-hero{
+  display:grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap:var(--gap);
+  align-items:center;
+}
+.lab-hero-cover{
+  margin:0;
+}
+.lab-hero-cover img{
+  width:100%;
+  display:block;
+  aspect-ratio: 16 / 9;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,0.25);
+}
+.lab-badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+.lab-badges .badge{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.04);
+  font-size:12px;
+  color:var(--muted);
+}
+.lab-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--gap);
+}
+.lab-highlights{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:var(--gap);
+}
+.lab-highlights h3{
+  margin:0 0 6px;
+  font-size:16px;
+}
+.lab-highlights p{
+  margin:0;
+}
+.shot-grid figcaption .subcap{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+}
+.lab-arch .ascii{
+  border:0;
+  padding:0;
+  background:transparent;
+}
+
+@media (max-width:960px){
+  .lab-hero{grid-template-columns:1fr;}
+  .lab-highlights{grid-template-columns:repeat(2,1fr);}
+}
+
+@media (max-width:640px){
+  .lab-columns{grid-template-columns:1fr;}
+  .lab-highlights{grid-template-columns:1fr;}
+  .lab-hero-cover img{aspect-ratio: 4 / 3;}
+}
+
 .gitem{
   padding:0;
   border:0;

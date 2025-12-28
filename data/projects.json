@@ -41,7 +41,7 @@
     "status": "ACTIVE",
     "category": "Software",
     "tags": ["ERP", "Inventory", "Workshop", "PHP", "Self-hosted"],
-    "cover": "/assets/img/projects/lab/dashboard.webp",
+    "cover": "/assets/img/projects/lab/cover.webp",
     "featured": false
   }
 ]
