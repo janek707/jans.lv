@@ -43,8 +43,8 @@
       </figure>
     </section>
 
-    <section class="section">
-      <div class="duo">
+    <section class="section lab-case">
+      <div class="lab-left">
         <div class="panel">
           <h2>Problem → Solution</h2>
           <p>
@@ -74,41 +74,75 @@
             </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section">
-      <h2>Engineering highlights</h2>
-      <div class="lab-highlights">
         <div class="panel">
-          <h3>Single-user auth</h3>
-          <p class="muted">Environment-based access for a private LAN/VPN install.</p>
+          <h2>Architecture</h2>
+          <p>Nginx fronts the single host and routes to PHP-FPM.</p>
+          <p>Application layer runs on PHP 8.2 with a MariaDB datastore.</p>
+          <p>Cron schedules the daily digest build and email.</p>
+          <p>GitHub Actions deploys to a self-hosted runner.</p>
         </div>
-        <div class="panel">
-          <h3>CSRF on all POST</h3>
-          <p class="muted">Safety guardrails on write operations.</p>
+        <div class="panel lab-arch">
+          <pre class="ascii">Nginx -> PHP-FPM -> PHP app -> MariaDB
+cron -> digest
+GitHub Actions runner -> deploy</pre>
         </div>
-        <div class="panel">
-          <h3>Ledger idempotency</h3>
-          <p class="muted">ref_type / ref_id prevent double-posted events.</p>
-        </div>
-        <div class="panel">
-          <h3>Decimal qty + units</h3>
-          <p class="muted">Accurate tracking for consumables and parts.</p>
-        </div>
-        <div class="panel">
-          <h3>Server-side lists</h3>
-          <p class="muted">URL state + persisted table prefs.</p>
-        </div>
-        <div class="panel">
-          <h3>Self-hosted deploy</h3>
-          <p class="muted">GitHub Actions runner pushes to the box.</p>
-        </div>
-        <div class="panel">
-          <h3>Daily digest</h3>
-          <p class="muted">Cron builds a focused recap.</p>
+
+        <div class="duo lab-tail">
+          <div class="panel">
+            <h2>Tradeoffs</h2>
+            <ul class="list-tight">
+              <li>Single-user focus limits shared workflows.</li>
+              <li>Server-side rendering prioritizes reliability over rich client UI.</li>
+              <li>Self-hosting adds maintenance and backup responsibility.</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h2>Planned next</h2>
+            <ul class="list-tight">
+              <li>Part usage history and movement reports.</li>
+              <li>CSV import/export for inventory and orders.</li>
+              <li>Digest formatting with action highlights.</li>
+              <li>More granular table presets per workflow.</li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      <aside class="lab-right">
+        <h2>Engineering highlights</h2>
+        <div class="lab-highlights">
+          <div class="panel">
+            <h3>Single-user auth</h3>
+            <p class="muted">Environment-based access for a private LAN/VPN install.</p>
+          </div>
+          <div class="panel">
+            <h3>CSRF on all POST</h3>
+            <p class="muted">Safety guardrails on write operations.</p>
+          </div>
+          <div class="panel">
+            <h3>Ledger idempotency</h3>
+            <p class="muted">ref_type / ref_id prevent double-posted events.</p>
+          </div>
+          <div class="panel">
+            <h3>Decimal qty + units</h3>
+            <p class="muted">Accurate tracking for consumables and parts.</p>
+          </div>
+          <div class="panel">
+            <h3>Server-side lists</h3>
+            <p class="muted">URL state + persisted table prefs.</p>
+          </div>
+          <div class="panel">
+            <h3>Self-hosted deploy</h3>
+            <p class="muted">GitHub Actions runner pushes to the box.</p>
+          </div>
+          <div class="panel">
+            <h3>Daily digest</h3>
+            <p class="muted">Cron builds a focused recap.</p>
+          </div>
+        </div>
+      </aside>
     </section>
 
     <section class="section">
@@ -162,44 +196,6 @@
           </a>
           <figcaption>Daily digest <span class="subcap">cron + SMTP test</span></figcaption>
         </figure>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Architecture</h2>
-      <div class="panel">
-        <p>Nginx fronts the single host and routes to PHP-FPM.</p>
-        <p>Application layer runs on PHP 8.2 with a MariaDB datastore.</p>
-        <p>Cron schedules the daily digest build and email.</p>
-        <p>GitHub Actions deploys to a self-hosted runner.</p>
-      </div>
-      <div class="panel lab-arch">
-        <pre class="ascii">Nginx -> PHP-FPM -> PHP app -> MariaDB
-cron -> digest
-GitHub Actions runner -> deploy</pre>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="duo">
-        <div class="panel">
-          <h2>Tradeoffs</h2>
-          <ul class="list-tight">
-            <li>Single-user focus limits shared workflows.</li>
-            <li>Server-side rendering prioritizes reliability over rich client UI.</li>
-            <li>Self-hosting adds maintenance and backup responsibility.</li>
-          </ul>
-        </div>
-
-        <div class="panel">
-          <h2>Planned next</h2>
-          <ul class="list-tight">
-            <li>Part usage history and movement reports.</li>
-            <li>CSV import/export for inventory and orders.</li>
-            <li>Digest formatting with action highlights.</li>
-            <li>More granular table presets per workflow.</li>
-          </ul>
-        </div>
       </div>
     </section>
 
