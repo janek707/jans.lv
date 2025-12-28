@@ -22,8 +22,8 @@ html,body{height:100%}
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background-color:var(--bg);
-  background-image:linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0) 40%);
+  background:var(--bg);
+  background-image:none;
   color:var(--text);
 }
 
