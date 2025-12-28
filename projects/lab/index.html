@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lab — Self-Hosted Personal ERP for a Home Workshop | jans.lv</title>
+
+  <link rel="stylesheet" href="../../assets/css/base.css" />
+  <link rel="stylesheet" href="../../assets/css/projects.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../">jans.lv</a>
+      <nav class="nav">
+        <a href="../../projects/">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Lab — Self-Hosted Personal ERP for a Home Workshop</h1>
+      <p class="muted meta">LAN/VPN • single-user • PHP 8.2 • MariaDB • Nginx • GitHub Actions • Cron</p>
+    </section>
+
+    <section class="section section-tight">
+      <h2>Overview</h2>
+
+      <div class="lead">
+        <figure class="cover-mini">
+          <img
+            src="../../assets/img/projects/lab/dashboard.webp"
+            alt="Lab dashboard overview"
+            loading="eager"
+          />
+        </figure>
+
+        <div class="lead-text">
+          <h2>Personal workshop control room</h2>
+          <p>
+            Lab is a self-hosted personal ERP for a home workshop. It keeps parts, orders, tasks and a lightweight
+            ledger in one place so daily work stays consistent. Built for a single user over LAN/VPN, the UI favors
+            fast navigation and predictable state.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2>What it does</h2>
+        <ul class="list-tight">
+          <li>Tracks parts with minimum quantities, units and availability.</li>
+          <li>Manages orders with item-level receiving workflow.</li>
+          <li>Logs ledger events tied to real-world actions.</li>
+          <li>Plans tasks with priority, due dates and completion.</li>
+          <li>Builds a daily digest summary by email.</li>
+          <li>Server-side lists with shareable URL state.</li>
+          <li>Saved table preferences for filters, columns and sorting.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2>Key engineering decisions</h2>
+        <ul class="list-tight">
+          <li>Single-user env auth.</li>
+          <li>CSRF on all POST.</li>
+          <li>Ledger idempotency (ref_type/ref_id).</li>
+          <li>Decimal qty + units.</li>
+          <li>Server-side lists with URL state + persisted table prefs.</li>
+          <li>Deploy via GitHub Actions self-hosted runner.</li>
+          <li>Daily digest via cron.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Screenshots</h2>
+      <div class="gallery shot-grid" aria-label="Lab screenshots">
+        <figure>
+          <a href="../../assets/img/projects/lab/dashboard.webp" target="_blank" rel="noreferrer">
+            <img src="../../assets/img/projects/lab/dashboard.webp" alt="Dashboard with signals and actions" loading="lazy" />
+          </a>
+          <figcaption>Dashboard: signals → actions</figcaption>
+        </figure>
+
+        <figure>
+          <a href="../../assets/img/projects/lab/parts.webp" target="_blank" rel="noreferrer">
+            <img src="../../assets/img/projects/lab/parts.webp" alt="Inventory list with filters" loading="lazy" />
+          </a>
+          <figcaption>Inventory list: URL state + sidebar filters</figcaption>
+        </figure>
+
+        <figure>
+          <a href="../../assets/img/projects/lab/parts-info.webp" target="_blank" rel="noreferrer">
+            <img src="../../assets/img/projects/lab/parts-info.webp" alt="Part detail with quantity and unit" loading="lazy" />
+          </a>
+          <figcaption>Part detail: qty, min_qty, unit</figcaption>
+        </figure>
+
+        <figure>
+          <a href="../../assets/img/projects/lab/orders.webp" target="_blank" rel="noreferrer">
+            <img src="../../assets/img/projects/lab/orders.webp" alt="Orders view with receiving flow" loading="lazy" />
+          </a>
+          <figcaption>Orders: item-level receiving workflow</figcaption>
+        </figure>
+
+        <figure>
+          <a href="../../assets/img/projects/lab/ledger.webp" target="_blank" rel="noreferrer">
+            <img src="../../assets/img/projects/lab/ledger.webp" alt="Ledger audit trail with references" loading="lazy" />
+          </a>
+          <figcaption>Ledger: audit trail + idempotent refs</figcaption>
+        </figure>
+
+        <figure>
+          <a href="../../assets/img/projects/lab/tasks.webp" target="_blank" rel="noreferrer">
+            <img src="../../assets/img/projects/lab/tasks.webp" alt="Tasks list with priorities and due dates" loading="lazy" />
+          </a>
+          <figcaption>Tasks: priorities, due dates, completion</figcaption>
+        </figure>
+
+        <figure>
+          <a href="../../assets/img/projects/lab/digest.webp" target="_blank" rel="noreferrer">
+            <img src="../../assets/img/projects/lab/digest.webp" alt="Daily digest email preview" loading="lazy" />
+          </a>
+          <figcaption>Daily digest via cron + SMTP test</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Architecture</h2>
+      <div class="panel">
+        <p>Single host behind Nginx with PHP-FPM.</p>
+        <p>Application layer: PHP 8.2 with a MariaDB datastore.</p>
+        <p>Cron builds the daily digest and emails it.</p>
+        <p>GitHub Actions deploys to a self-hosted runner.</p>
+      </div>
+      <pre class="ascii">Nginx -> PHP-FPM -> PHP app -> MariaDB
+cron -> digest
+GitHub Actions runner -> deploy</pre>
+    </section>
+
+    <section class="section">
+      <div class="duo">
+        <div class="panel">
+          <h2>Tradeoffs</h2>
+          <ul class="list-tight">
+            <li>Single-user design keeps auth simple but limits shared workflows.</li>
+            <li>Server-side rendering favors consistency over client-side speed.</li>
+            <li>Strict ledger refs reduce flexibility for ad-hoc edits.</li>
+            <li>Self-hosting requires routine maintenance and backups.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>Planned next</h2>
+          <ul class="list-tight">
+            <li>Part usage history and richer movement reports.</li>
+            <li>CSV import/export for inventory and orders.</li>
+            <li>Improved digest formatting with actionable highlights.</li>
+            <li>More granular table presets per workflow.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="wrap muted">© 2025 jans.lv</div>
+    </footer>
+  </main>
+</body>
+</html>
