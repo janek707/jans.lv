@@ -150,51 +150,51 @@ GitHub Actions runner -> deploy</pre>
       <h2>Screenshots</h2>
       <div class="gallery shot-grid" aria-label="Lab screenshots">
         <figure>
-          <a href="../../assets/img/projects/lab/dashboard.webp" target="_blank" rel="noreferrer">
+          <button class="gitem" type="button" data-full="../../assets/img/projects/lab/dashboard.webp" aria-label="Open screenshot: Dashboard">
             <img src="../../assets/img/projects/lab/dashboard.webp" alt="Dashboard overview with signals and actions" loading="lazy" />
-          </a>
+          </button>
           <figcaption>Dashboard: signals → actions <span class="subcap">Focus on next steps</span></figcaption>
         </figure>
 
         <figure>
-          <a href="../../assets/img/projects/lab/parts.webp" target="_blank" rel="noreferrer">
+          <button class="gitem" type="button" data-full="../../assets/img/projects/lab/parts.webp" aria-label="Open screenshot: Inventory list">
             <img src="../../assets/img/projects/lab/parts.webp" alt="Inventory list with sidebar filters" loading="lazy" />
-          </a>
+          </button>
           <figcaption>Inventory list <span class="subcap">URL state + sidebar filters</span></figcaption>
         </figure>
 
         <figure>
-          <a href="../../assets/img/projects/lab/parts-info.webp" target="_blank" rel="noreferrer">
+          <button class="gitem" type="button" data-full="../../assets/img/projects/lab/parts-info.webp" aria-label="Open screenshot: Part detail">
             <img src="../../assets/img/projects/lab/parts-info.webp" alt="Part detail with quantity and unit settings" loading="lazy" />
-          </a>
+          </button>
           <figcaption>Part detail <span class="subcap">qty, min_qty, unit</span></figcaption>
         </figure>
 
         <figure>
-          <a href="../../assets/img/projects/lab/orders.webp" target="_blank" rel="noreferrer">
+          <button class="gitem" type="button" data-full="../../assets/img/projects/lab/orders.webp" aria-label="Open screenshot: Orders workflow">
             <img src="../../assets/img/projects/lab/orders.webp" alt="Orders view with item-level receiving flow" loading="lazy" />
-          </a>
+          </button>
           <figcaption>Orders workflow <span class="subcap">item-level receiving</span></figcaption>
         </figure>
 
         <figure>
-          <a href="../../assets/img/projects/lab/ledger.webp" target="_blank" rel="noreferrer">
+          <button class="gitem" type="button" data-full="../../assets/img/projects/lab/ledger.webp" aria-label="Open screenshot: Ledger">
             <img src="../../assets/img/projects/lab/ledger.webp" alt="Ledger audit trail with references" loading="lazy" />
-          </a>
+          </button>
           <figcaption>Ledger <span class="subcap">audit trail + idempotent refs</span></figcaption>
         </figure>
 
         <figure>
-          <a href="../../assets/img/projects/lab/tasks.webp" target="_blank" rel="noreferrer">
+          <button class="gitem" type="button" data-full="../../assets/img/projects/lab/tasks.webp" aria-label="Open screenshot: Tasks">
             <img src="../../assets/img/projects/lab/tasks.webp" alt="Tasks list with priority and due dates" loading="lazy" />
-          </a>
+          </button>
           <figcaption>Tasks <span class="subcap">priorities, due dates, completion</span></figcaption>
         </figure>
 
         <figure>
-          <a href="../../assets/img/projects/lab/digest.webp" target="_blank" rel="noreferrer">
+          <button class="gitem" type="button" data-full="../../assets/img/projects/lab/digest.webp" aria-label="Open screenshot: Daily digest">
             <img src="../../assets/img/projects/lab/digest.webp" alt="Daily digest email preview" loading="lazy" />
-          </a>
+          </button>
           <figcaption>Daily digest <span class="subcap">cron + SMTP test</span></figcaption>
         </figure>
       </div>
@@ -204,5 +204,13 @@ GitHub Actions runner -> deploy</pre>
       <div class="wrap muted">© 2025 jans.lv</div>
     </footer>
   </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" hidden aria-hidden="true">
+    <button class="lb-close" type="button" aria-label="Close">&times;</button>
+    <img class="lb-img" alt="Full-size preview" />
+  </div>
+
+  <script src="../../assets/js/project-gallery.js" defer></script>
 </body>
 </html>

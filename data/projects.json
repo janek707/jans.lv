@@ -1,5 +1,27 @@
 [
   {
+    "slug": "lab",
+    "title": "Lab",
+    "excerpt": "Self-hosted personal ERP for workshop inventory, orders, tasks and ledger tracking.",
+    "date": "2025-12-28",
+    "status": "ACTIVE",
+    "category": "Software",
+    "tags": ["ERP", "Inventory", "Workshop", "PHP", "Self-hosted"],
+    "cover": "/assets/img/projects/lab/cover.webp",
+    "featured": false
+  },
+  {
+    "slug": "wifi-bridge-biquad",
+    "title": "2.4 GHz Wi-Fi Bridge Biquad Antenna",
+    "excerpt": "DIY 2.4 GHz biquad antenna with copper reflector and PETG radome, built for stable outdoor Wi-Fi backhaul.",
+    "date": "2025-12-21",
+    "status": "ACTIVE",
+    "category": "Networking",
+    "tags": ["Wi-Fi", "Antenna", "RF", "DIY", "3D Printing"],
+    "cover": "/assets/img/projects/wifi-bridge-biquad/cover.webp",
+    "featured": false
+  },
+  {
     "slug": "kraslavas-kauss-2025",
     "title": "Kraslavas Kauss 2025",
     "excerpt": "Race event prep, tuning and field notes.",
@@ -20,28 +42,5 @@
     "tags": ["FPV", "Freestyle", "Build"],
     "cover": "/assets/img/projects/5inch-freestyle/cover.webp",
     "featured": true
-  },
-
-  {
-    "slug": "wifi-bridge-biquad",
-    "title": "2.4 GHz Wi-Fi Bridge Biquad Antenna",
-    "excerpt": "DIY 2.4 GHz biquad antenna with copper reflector and PETG radome, built for stable outdoor Wi-Fi backhaul.",
-    "date": "2025-12-21",
-    "status": "ACTIVE",
-    "category": "Networking",
-    "tags": ["Wi-Fi", "Antenna", "RF", "DIY", "3D Printing"],
-    "cover": "/assets/img/projects/wifi-bridge-biquad/cover.webp",
-    "featured": false
-  },
-  {
-    "slug": "lab",
-    "title": "Lab",
-    "excerpt": "Self-hosted personal ERP for workshop inventory, orders, tasks and ledger tracking.",
-    "date": "2025-12-28",
-    "status": "ACTIVE",
-    "category": "Software",
-    "tags": ["ERP", "Inventory", "Workshop", "PHP", "Self-hosted"],
-    "cover": "/assets/img/projects/lab/cover.webp",
-    "featured": false
   }
 ]
