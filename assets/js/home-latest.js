@@ -1,15 +1,5 @@
 const grid = document.getElementById("latestGrid");
 
-function sortProjects(items) {
-  return items.slice().sort((a, b) => {
-    const fa = !!a.featured, fb = !!b.featured;
-    if (fa !== fb) return fa ? -1 : 1;
-    const da = a.date ? Date.parse(a.date) : 0;
-    const db = b.date ? Date.parse(b.date) : 0;
-    return db - da;
-  });
-}
-
 function esc(s="") {
   return String(s)
     .replaceAll("&","&amp;")
@@ -51,8 +41,7 @@ async function main() {
     const res = await fetch("/data/projects.json", { cache: "no-store" });
     const items = await res.json();
 
-    const sorted = sortProjects(items);
-    const latest3 = sorted.slice(0, 3);
+    const latest3 = (items || []).slice(0, 3);
 
     grid.innerHTML = latest3.map(cardHTML).join("");
   } catch (e) {
