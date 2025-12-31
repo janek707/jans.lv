@@ -21,20 +21,17 @@
   </header>
 
   <main class="wrap">
-    <section class="hero">
-      <h1>433 MHz RF Relay: Why ON/OFF Doesn't Work - and How to Fix It</h1>
-    </section>
-
     <section class="section section-tight">
+      <h1>433 MHz RF Relay: Why ON/OFF Doesn't Work - and How to Fix It</h1>
       <p class="muted meta">
         Cheap 433 MHz RF relay modules are often advertised as supporting ON/OFF (interlock / latched) mode.
         In practice, this mode frequently fails when used with the included remote control.
       </p>
-      <p class="muted">
-        This case explains the real cause of the issue and demonstrates a simple hardware-level fix that restores
-        proper ON/OFF operation using a single remote.
-      </p>
     </section>
+    <p class="muted">
+      This case explains the real cause of the issue and demonstrates a simple hardware-level fix that restores
+      proper ON/OFF operation using a single remote.
+    </p>
 
     <section class="section">
       <div class="panel">
@@ -43,7 +40,7 @@
             src="https://www.youtube.com/embed/Fd0fWd0J3sM"
             title="433 MHz RF Relay: Why ON/OFF Doesn't Work - and How to Fix It"
             frameborder="0"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="encrypted-media; picture-in-picture; web-share"
             allowfullscreen>
           </iframe>
         </div>
@@ -90,7 +87,7 @@
         <h2>Root Cause</h2>
         <p>Opening the remote control reveals the actual cause.</p>
         <p>
-          Both buttons on the PCB are routed to the same microcontroller input. The board uses 0 ohm resistors
+          Both buttons on the PCB are routed to the same microcontroller input. The board uses 0 Ω resistors
           as configuration jumpers, and in the factory configuration both buttons share a single signal path.
         </p>
         <p>As a result:</p>
@@ -110,7 +107,7 @@
         <p>
           The PCB is a universal design that supports multiple routing options.
         </p>
-        <p>By relocating a 0 ohm jumper to an alternative position:</p>
+        <p>By relocating a 0 Ω jumper to an alternative position:</p>
         <ul class="list-tight">
           <li>each button is connected to a separate MCU input</li>
           <li>the remote starts generating two distinct RF codes</li>
@@ -148,16 +145,11 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="panel">
-        <h2>Tags</h2>
-        <p class="muted">electronics, rf, 433mhz, reverse-engineering, hardware-debugging</p>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="wrap muted">&copy; 2025 jans.lv</div>
-    </footer>
+    <p class="muted">Tags: electronics, rf, 433mhz, reverse-engineering, hardware-debugging</p>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap muted">&copy; 2025 jans.lv</div>
+  </footer>
 </body>
 </html>
