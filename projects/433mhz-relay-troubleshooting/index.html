@@ -21,17 +21,47 @@
   </header>
 
   <main class="wrap">
-    <section class="section section-tight">
-      <h1>433 MHz RF Relay: Why ON/OFF Doesn't Work - and How to Fix It</h1>
-      <p class="muted meta">
-        Cheap 433 MHz RF relay modules are often advertised as supporting ON/OFF (interlock / latched) mode.
-        In practice, this mode frequently fails when used with the included remote control.
-      </p>
+    <section class="hero lab-hero">
+      <div class="lab-hero-text">
+        <h1>433 MHz RF Relay: Why ON/OFF Doesn't Work - and How to Fix It</h1>
+        <p class="muted meta">
+          Cheap 433 MHz RF relay modules are often advertised as supporting ON/OFF (interlock / latched) mode.
+        </p>
+        <div class="lab-badges" aria-label="Case highlights">
+          <span class="badge">433&nbsp;MHz</span>
+          <span class="badge">RF relay</span>
+          <span class="badge">Interlock / latched</span>
+          <span class="badge">EV1527</span>
+          <span class="badge">0&nbsp;Ω jumper</span>
+          <span class="badge">Reverse engineering</span>
+        </div>
+        <p class="muted">
+          This case explains the real cause of the issue and demonstrates a simple hardware-level fix that restores
+          proper ON/OFF operation using a single remote.
+        </p>
+      </div>
+      <div class="lab-hero-cover">
+        <h2>Engineering highlights</h2>
+        <div class="lab-highlights">
+          <div class="panel">
+            <h3>Same RF code</h3>
+            <p class="muted">Both buttons map to a single MCU input.</p>
+          </div>
+          <div class="panel">
+            <h3>0&nbsp;Ω jumpers</h3>
+            <p class="muted">Routing is set by 0&nbsp;Ω resistor positions.</p>
+          </div>
+          <div class="panel">
+            <h3>No firmware</h3>
+            <p class="muted">Fix is entirely hardware-level.</p>
+          </div>
+          <div class="panel">
+            <h3>Interlock restored</h3>
+            <p class="muted">ON and OFF work correctly after reroute.</p>
+          </div>
+        </div>
+      </div>
     </section>
-    <p class="muted">
-      This case explains the real cause of the issue and demonstrates a simple hardware-level fix that restores
-      proper ON/OFF operation using a single remote.
-    </p>
 
     <section class="section">
       <div class="panel">
@@ -47,101 +77,93 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="panel">
-        <h2>Problem</h2>
-        <p>
-          According to the documentation, the relay supports interlock (latched) mode, where:
-        </p>
-        <ul class="list-tight">
-          <li>the first button turns the relay ON</li>
-          <li>the second button turns the relay OFF</li>
-        </ul>
-        <p>
-          However, when attempting to program this mode, the learning process fails. Both buttons behave identically,
-          making correct ON/OFF operation impossible.
-        </p>
-        <p>
-          Toggle mode works as expected, which often leads to the assumption that the relay or firmware is defective.
-        </p>
-      </div>
-    </section>
+    <section class="section lab-case">
+      <div class="lab-left">
+        <div class="panel">
+          <h2>Problem</h2>
+          <p>
+            According to the documentation, the relay supports interlock (latched) mode, where:
+          </p>
+          <ul class="list-tight">
+            <li>the first button turns the relay ON</li>
+            <li>the second button turns the relay OFF</li>
+          </ul>
+          <p>
+            However, when attempting to program this mode, the learning process fails. Both buttons behave identically,
+            making correct ON/OFF operation impossible.
+          </p>
+          <p>
+            Toggle mode works as expected, which often leads to the assumption that the relay or firmware is defective.
+          </p>
+        </div>
 
-    <section class="section">
-      <div class="panel">
-        <h2>Observation</h2>
-        <p>Practical testing shows that:</p>
-        <ul class="list-tight">
-          <li>the receiver correctly supports interlock mode</li>
-          <li>the learning procedure is performed correctly</li>
-          <li>both buttons on the remote trigger the same action</li>
-        </ul>
-        <p>
-          This indicates that the issue is not related to receiver memory, firmware, or learning sequence.
-        </p>
-      </div>
-    </section>
+        <div class="panel">
+          <h2>Observation</h2>
+          <p>Practical testing shows that:</p>
+          <ul class="list-tight">
+            <li>the receiver correctly supports interlock mode</li>
+            <li>the learning procedure is performed correctly</li>
+            <li>both buttons on the remote trigger the same action</li>
+          </ul>
+          <p>
+            This indicates that the issue is not related to receiver memory, firmware, or learning sequence.
+          </p>
+        </div>
 
-    <section class="section">
-      <div class="panel">
-        <h2>Root Cause</h2>
-        <p>Opening the remote control reveals the actual cause.</p>
-        <p>
-          Both buttons on the PCB are routed to the same microcontroller input. The board uses 0 Ω resistors
-          as configuration jumpers, and in the factory configuration both buttons share a single signal path.
-        </p>
-        <p>As a result:</p>
-        <ul class="list-tight">
-          <li>both buttons generate the same RF code</li>
-          <li>the receiver cannot distinguish between ON and OFF commands</li>
-        </ul>
-        <p>
-          This is a hardware configuration choice, not a firmware limitation.
-        </p>
-      </div>
-    </section>
+        <div class="panel">
+          <h2>Root Cause</h2>
+          <p>Opening the remote control reveals the actual cause.</p>
+          <p>
+            Both buttons on the PCB are routed to the same microcontroller input. The board uses 0 Ω resistors
+            as configuration jumpers, and in the factory configuration both buttons share a single signal path.
+          </p>
+          <p>As a result:</p>
+          <ul class="list-tight">
+            <li>both buttons generate the same RF code</li>
+            <li>the receiver cannot distinguish between ON and OFF commands</li>
+          </ul>
+          <p>
+            This is a hardware configuration choice, not a firmware limitation.
+          </p>
+        </div>
 
-    <section class="section">
-      <div class="panel">
-        <h2>Fix</h2>
-        <p>
-          The PCB is a universal design that supports multiple routing options.
-        </p>
-        <p>By relocating a 0 Ω jumper to an alternative position:</p>
-        <ul class="list-tight">
-          <li>each button is connected to a separate MCU input</li>
-          <li>the remote starts generating two distinct RF codes</li>
-        </ul>
-        <p>No firmware changes are required.</p>
-        <p>No modification of the receiver is necessary.</p>
-      </div>
-    </section>
+        <div class="panel">
+          <h2>Fix</h2>
+          <p>
+            The PCB is a universal design that supports multiple routing options.
+          </p>
+          <p>By relocating a 0 Ω jumper to an alternative position:</p>
+          <ul class="list-tight">
+            <li>each button is connected to a separate MCU input</li>
+            <li>the remote starts generating two distinct RF codes</li>
+          </ul>
+          <p>No firmware changes are required.</p>
+          <p>No modification of the receiver is necessary.</p>
+        </div>
 
-    <section class="section">
-      <div class="panel">
-        <h2>Result</h2>
-        <p>After the jumper reconfiguration:</p>
-        <ul class="list-tight">
-          <li>interlock (latched) mode programs successfully</li>
-          <li>one button reliably turns the relay ON</li>
-          <li>the second button reliably turns the relay OFF</li>
-          <li>a single remote works exactly as described in the documentation</li>
-        </ul>
-      </div>
-    </section>
+        <div class="panel">
+          <h2>Result</h2>
+          <p>After the jumper reconfiguration:</p>
+          <ul class="list-tight">
+            <li>interlock (latched) mode programs successfully</li>
+            <li>one button reliably turns the relay ON</li>
+            <li>the second button reliably turns the relay OFF</li>
+            <li>a single remote works exactly as described in the documentation</li>
+          </ul>
+        </div>
 
-    <section class="section">
-      <div class="panel">
-        <h2>Notes</h2>
-        <p>This case highlights a common pattern in low-cost electronics:</p>
-        <ul class="list-tight">
-          <li>documentation often describes an ideal configuration</li>
-          <li>shipped hardware may use cost-saving shortcuts</li>
-          <li>many "firmware bugs" are actually PCB routing decisions</li>
-        </ul>
-        <p>
-          In this case, the receiver worked correctly from the start. The limitation was entirely inside the remote control hardware.
-        </p>
+        <div class="panel">
+          <h2>Notes</h2>
+          <p>This case highlights a common pattern in low-cost electronics:</p>
+          <ul class="list-tight">
+            <li>documentation often describes an ideal configuration</li>
+            <li>shipped hardware may use cost-saving shortcuts</li>
+            <li>many "firmware bugs" are actually PCB routing decisions</li>
+          </ul>
+          <p>
+            In this case, the receiver worked correctly from the start. The limitation was entirely inside the remote control hardware.
+          </p>
+        </div>
       </div>
     </section>
 
