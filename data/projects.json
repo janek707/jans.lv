@@ -1,5 +1,16 @@
 [
   {
+    "slug": "433mhz-relay-troubleshooting",
+    "title": "433 MHz RF Relay: ON/OFF Interlock Fix",
+    "excerpt": "Root cause and hardware fix for 433 MHz RF relay remotes where ON/OFF (interlock) mode fails.",
+    "date": "2025-12-31",
+    "status": "STABLE",
+    "category": "Electronics",
+    "tags": ["Electronics", "RF", "433MHz", "Reverse Engineering", "Hardware Debugging"],
+    "cover": "/assets/img/projects/433mhz-relay-troubleshooting/cover.webp",
+    "featured": false
+  },
+  {
     "slug": "lab",
     "title": "Lab",
     "excerpt": "Self-hosted personal ERP for workshop inventory, orders, tasks and ledger tracking.",
