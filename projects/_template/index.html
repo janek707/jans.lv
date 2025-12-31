@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>5&quot; Freestyle — Chase-Tuned Build | jans.lv</title>
+  <title>5&quot; Freestyle - Chase-Tuned Build | jans.lv</title>
 
   <link rel="stylesheet" href="../../assets/css/base.css" />
   <link rel="stylesheet" href="../../assets/css/projects.css" />
@@ -20,32 +20,39 @@
   </header>
 
   <main class="wrap">
-    <section class="hero">
-      <h1>5&quot; Freestyle — Chase-Tuned Build</h1>
-      <p class="muted meta">
-        Lean chase rig for tight lines and clean footage — built for predictable handling, stable RF and crash-resilient mechanics.
-      </p>
+    <section class="hero lab-hero">
+      <div class="lab-hero-text">
+        <h1>5&quot; Freestyle - Chase-Tuned Build</h1>
+        <p class="muted meta">
+          Lean chase rig for tight lines and clean footage - built for predictable handling, stable RF and crash-resilient mechanics.
+        </p>
+        <div class="lab-badges" aria-label="Stack highlights">
+          <span class="badge">5-inch</span>
+          <span class="badge">6S</span>
+          <span class="badge">Analogue</span>
+          <span class="badge">Chase rig</span>
+          <span class="badge">Soft-mounted</span>
+          <span class="badge">3D-printed</span>
+        </div>
+        <a class="lab-jump muted" href="#screenshots">Jump to screenshots &gt;</a>
+      </div>
+      <figure class="lab-hero-cover">
+        <img
+          src="../../assets/img/projects/5inch-freestyle/cover.webp"
+          alt="5-inch freestyle quad cover"
+          loading="eager"
+        />
+      </figure>
     </section>
 
-    <section class="section section-tight">
-      <h2>Overview</h2>
-
-      <div class="split">
-        <div class="split-main">
-          <div class="lead">
-            <figure class="cover-mini">
-              <img src="../../assets/img/projects/5inch-freestyle/cover.webp" alt="5-inch freestyle quad cover" loading="eager" />
-            </figure>
-
-            <div class="lead-text">
-              <h2>Chase platform</h2>
-              <p>
-                This 5-inch quad was built as a dedicated chase platform for close-proximity flying and race-event filming.
-                Priorities: smooth control, vibration discipline and mechanical durability — not maximum top speed.
-              </p>
-            </div>
-          </div>
-
+    <section class="section lab-case">
+      <div class="lab-left">
+        <div class="panel">
+          <h2>Overview</h2>
+          <p>
+            This 5-inch quad was built as a dedicated chase platform for close-proximity flying and race-event filming.
+            Priorities: smooth control, vibration discipline and mechanical durability - not maximum top speed.
+          </p>
           <p>
             The build relies heavily on custom 3D-printed parts to replace temporary solutions like zip-ties and tape,
             improving repeatability, serviceability and crash resilience.
@@ -55,30 +62,6 @@
           </p>
         </div>
 
-        <aside class="spec-card">
-          <h2>Quick spec</h2>
-          <dl class="spec">
-            <dt>Frame</dt><dd>GEPRC Mark5 (true-X)</dd>
-            <dt>FC / ESC</dt><dd>SpeedyBee F7 + 60A stack (soft-mounted)</dd>
-            <dt>Motors</dt><dd>2306 1700KV</dd>
-            <dt>Props</dt><dd>5×4.3</dd>
-            <dt>Battery</dt><dd>6S 1100–1300 mAh</dd>
-            <dt>FPV camera</dt><dd>RunCam Phoenix 2 Pro (placeholder)</dd>
-            <dt>VTX</dt><dd>SpeedyBee TX800 (analogue)</dd>
-            <dt>VTX antenna</dt><dd>Foxeer Lollipop 4 RHCP</dd>
-            <dt>RX link</dt><dd>TBS Crossfire Nano RX</dd>
-            <dt>RX antenna</dt><dd>TBS Immortal T</dd>
-            <dt>GPS</dt><dd>GPS + compass module (u-blox M8 class, exact model unknown)</dd>
-            <dt>Beeper</dt><dd>Self-powered beeper (model unknown)</dd>
-            <dt>Payload</dt><dd>GoPro 12 + ND filters</dd>
-            <dt>Rates</dt><dd>Roll 430° · Pitch 390° · Yaw 320°</dd>
-          </dl>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="duo">
         <div class="panel">
           <h2>Design decisions</h2>
           <ul class="list-tight">
@@ -100,26 +83,46 @@
             <li><strong>Recovery:</strong> independent self-powered beeper.</li>
           </ul>
         </div>
+
+        <div class="panel">
+          <h2>3D-printed parts</h2>
+          <ul class="list-tight">
+            <li>Arm-end motor protection.</li>
+            <li>Belly / skid plate.</li>
+            <li>Rear stack protective cage.</li>
+            <li>Rigid VTX mount.</li>
+            <li>Antenna mounts (SMA + Immortal T).</li>
+            <li>Combined GoPro + GPS mount.</li>
+            <li>Self-powered beeper mount.</li>
+          </ul>
+        </div>
       </div>
+
+      <aside class="lab-right">
+        <h2>Engineering highlights</h2>
+        <div class="lab-highlights">
+          <div class="panel">
+            <h3>Mark5 true-X</h3>
+            <p class="muted">Neutral response for repeatable chase lines.</p>
+          </div>
+          <div class="panel">
+            <h3>Soft-mounted stack</h3>
+            <p class="muted">Lower gyro noise and stable tuning.</p>
+          </div>
+          <div class="panel">
+            <h3>Analogue RF chain</h3>
+            <p class="muted">Stable feed in dust and foliage.</p>
+          </div>
+          <div class="panel">
+            <h3>Printed protection</h3>
+            <p class="muted">Rigid mounts in place of tape or zip-ties.</p>
+          </div>
+        </div>
+      </aside>
     </section>
 
-    <section class="section">
-      <div class="panel">
-        <h2>3D-printed parts</h2>
-        <ul class="list-tight">
-          <li>Arm-end motor protection.</li>
-          <li>Belly / skid plate.</li>
-          <li>Rear stack protective cage.</li>
-          <li>Rigid VTX mount.</li>
-          <li>Antenna mounts (SMA + Immortal T).</li>
-          <li>Combined GoPro + GPS mount.</li>
-          <li>Self-powered beeper mount.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Gallery</h2>
+    <section class="section" id="screenshots">
+      <h2>Screenshots</h2>
 
       <!-- IMPORTANT: no hardcoded images here (prevents duplicates) -->
       <div class="gallery" id="gallery"
@@ -133,7 +136,7 @@
     </section>
 
     <footer class="site-footer">
-      <div class="wrap muted">© 2025 jans.lv</div>
+      <div class="wrap muted">&copy; 2025 jans.lv</div>
     </footer>
   </main>
 
